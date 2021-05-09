@@ -5,6 +5,15 @@
     <groupId>hu.unideb.inf</groupId>
     <artifactId>javafx-board-game-example3</artifactId>
     <version>1.0</version>
+    <developers>
+        <developer>
+            <id>RangerFoxy</id>
+            <name>Szabó Dániel József</name>
+            <email>daniszabobtw@gmail.com</email>
+            <organization>Faculty of Informatics, University of Debrecen</organization>
+            <organizationUrl>https://www.inf.unideb.hu/</organizationUrl>
+        </developer>
+    </developers>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
