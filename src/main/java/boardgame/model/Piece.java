@@ -40,7 +40,7 @@ public class Piece {
             System.out.printf("%s -> %s\n", oldPosition.toString(), newPosition.toString());
         });
         System.out.println(piece);
-        piece.moveTo(PawnDirection.DOWN_RIGHT);
+        piece.moveTo(KnightDirection.DOWN_RIGHT);
         System.out.println(piece);
     }
 }

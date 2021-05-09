@@ -6,7 +6,7 @@ import java.util.*;
 
 public class BoardGameModel {
 
-    public static int BOARD_SIZE = 5;
+    public static int BOARD_SIZE = 8;
 
     private final Piece[] pieces;
 
