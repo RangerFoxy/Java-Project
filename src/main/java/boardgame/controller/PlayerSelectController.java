@@ -18,8 +18,16 @@ public class PlayerSelectController {
 
     private Draw view = new Draw();
 
+    public TextField getLightPlayerName() {
+        return lightPlayerName;
+    }
+
     @FXML
     private TextField lightPlayerName;
+
+    public TextField getDarkPlayerName() {
+        return darkPlayerName;
+    }
 
     @FXML
     private TextField darkPlayerName;

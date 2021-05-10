@@ -45,6 +45,11 @@
               <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#closeAction" text="Close" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem fx:id="rulesButton" mnemonicParsing="false" onAction="#rulesAction" text="Rules" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

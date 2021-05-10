@@ -200,12 +200,23 @@ public class BoardGameController {
         StackPane newSquare = getSquare(newPosition);
         newSquare.getChildren().addAll(oldSquare.getChildren());
         oldSquare.getChildren().clear();
+        endGame();
+    }
+
+    private void endGame() {
+        if (model.winner()) {
+
+        }
     }
 
     @FXML
-    public void closeAction(ActionEvent event) throws IOException {
+    private void closeAction(ActionEvent event) throws IOException {
         view.alert(event);
     }
 
+    @FXML
+    private void rulesAction(ActionEvent event) throws IOException {
+        view.help();
+    }
 
 }

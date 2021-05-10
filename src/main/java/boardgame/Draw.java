@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 
+import javax.imageio.IIOException;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.Optional;
@@ -48,6 +49,17 @@ public class Draw {
         }
     }
 
+    public void help() {
+        Alert help = new Alert(Alert.AlertType.INFORMATION);
+        help.setTitle("The rules of the game");
+        help.setHeaderText("Rules");
+        help.setContentText("Move your knight to achieve that the opponent cannot move to another tile!");
+        help.showAndWait();
+    }
+
+    public void victory() {
+
+    }
 
     public ImageView createPiece(String color) {
         var piece = new ImageView();

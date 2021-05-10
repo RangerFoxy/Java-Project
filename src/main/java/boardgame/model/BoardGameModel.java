@@ -61,6 +61,7 @@ public class BoardGameModel {
                 return false;
             }
         }
+
         return true;
     }
 
@@ -100,6 +101,13 @@ public class BoardGameModel {
             }
         }
         return OptionalInt.empty();
+    }
+
+    public boolean winner() {
+        if (getValidMoves(player ? 1 : 0).isEmpty()) {
+            return true;
+        }
+        return false;
     }
 
     public String toString() {
