@@ -15,6 +15,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.effect.Light;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -86,16 +87,16 @@ public class BoardGameController {
     private void createPieces() {
         for (int i = 0; i < model.getPieceCount(); i++) {
             model.positionProperty(i).addListener(this::piecePositionChange);
-            var piece = createPiece(Color.valueOf(model.getPieceType(i).name()));
+            var piece = view.createPiece(model.getPieceType(i).name());
             getSquare(model.getPiecePosition(i)).getChildren().add(piece);
         }
     }
 
-    private Circle createPiece(Color color) {
+/*    private Circle createPiece(Color color) {
         var piece = new Circle(25);
         piece.setFill(color);
         return piece;
-    }
+    }*/
 
     @FXML
     private void handleMouseClick(MouseEvent event) {

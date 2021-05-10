@@ -7,8 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
-import javax.swing.text.html.ImageView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import java.io.IOException;
 
 public class Draw {
@@ -25,7 +26,11 @@ public class Draw {
         stage.show();
     }
 
-
+    public ImageView createPiece(String color) {
+        var piece = new ImageView();
+        piece.setImage(new Image(getClass().getResource("/images/"+color+".png").toExternalForm()));
+        return piece;
+    }
 
     public void drawRedSquare(StackPane square) {
         square.getStyleClass().add("red");

@@ -15,8 +15,8 @@ public class BoardGameModel {
     private final Piece[] pieces;
 
     public BoardGameModel() {
-        this(new Piece(PieceType.WHITE, new Position(0, 0)),
-                new Piece(PieceType.BLACK, new Position(BOARD_SIZE - 1, BOARD_SIZE - 1)));
+        this(new Piece(PieceType.LIGHT, new Position(0, 0)),
+                new Piece(PieceType.DARK, new Position(BOARD_SIZE - 1, BOARD_SIZE - 1)));
     }
 
     public BoardGameModel(Piece... pieces) {
