@@ -13,3 +13,11 @@
 .square:hover {
     -fx-background-color: ghostwhite;
 }
+
+.light {
+    -fx-background-color: #FFF8DC;
+}
+
+.dark{
+    -fx-background-color: #CD853F;
+}

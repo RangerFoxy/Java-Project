@@ -11,10 +11,8 @@ public class BoardGameModel {
     private final Piece[] pieces;
 
     public BoardGameModel() {
-        this(new Piece(PieceType.BLUE, new Position(0, 0)),
-                new Piece(PieceType.GREEN, new Position(0, BOARD_SIZE - 1)),
-                new Piece(PieceType.RED, new Position(BOARD_SIZE - 1, 0)),
-                new Piece(PieceType.YELLOW, new Position(BOARD_SIZE - 1, BOARD_SIZE - 1)));
+        this(new Piece(PieceType.WHITE, new Position(0, 0)),
+                new Piece(PieceType.BLACK, new Position(BOARD_SIZE - 1, BOARD_SIZE - 1)));
     }
 
     public BoardGameModel(Piece... pieces) {
@@ -23,12 +21,8 @@ public class BoardGameModel {
     }
 
     private void checkPieces(Piece[] pieces) {
-        var seen = new HashSet<Position>();
-        for (var piece : pieces) {
-            if (! isOnBoard(piece.getPosition()) || seen.contains(piece.getPosition())) {
-                throw new IllegalArgumentException();
-            }
-            seen.add(piece.getPosition());
+        if (! isOnBoard(pieces[0].getPosition()) || ! isOnBoard(pieces[1].getPosition()) || pieces[0].equals(pieces[1])) {
+            throw new IllegalArgumentException();
         }
     }
 
@@ -108,9 +102,9 @@ public class BoardGameModel {
         return joiner.toString();
     }
 
-    public static void main(String[] args) {
-        BoardGameModel model = new BoardGameModel();
-        System.out.println(model);
-    }
+//    public static void main(String[] args) {
+//        BoardGameModel model = new BoardGameModel();
+//        System.out.println(model);
+//    }
 
 }

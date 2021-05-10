@@ -1,16 +1,24 @@
-package boardgame;
+package boardgame.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
+import javafx.stage.Stage;
 import org.tinylog.Logger;
 
 import boardgame.model.BoardGameModel;
@@ -53,16 +61,20 @@ public class BoardGameController {
     private void createBoard() {
         for (int i = 0; i < board.getRowCount(); i++) {
             for (int j = 0; j < board.getColumnCount(); j++) {
-                var square = createSquare();
+                var square = createSquare(i, j);
                 board.add(square, j, i);
             }
         }
     }
 
-    private StackPane createSquare() {
+    private StackPane createSquare(int i, int j) {
         var square = new StackPane();
         square.getStyleClass().add("square");
         square.setOnMouseClicked(this::handleMouseClick);
+        if ((i + j) % 2 == 0)
+            square.getStyleClass().add("light");
+        else
+            square.getStyleClass().add("dark");
         return square;
     }
 
@@ -75,7 +87,7 @@ public class BoardGameController {
     }
 
     private Circle createPiece(Color color) {
-        var piece = new Circle(50);
+        var piece = new Circle(25);
         piece.setFill(color);
         return piece;
     }
