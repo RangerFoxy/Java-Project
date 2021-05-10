@@ -8,7 +8,7 @@ public class BoardGameModel {
 
     public static int BOARD_SIZE = 8;
 
-    private boolean player = false;
+    private boolean player = true;
 
     public ArrayList<Position> redSquares = new ArrayList<>();
 
@@ -77,6 +77,7 @@ public class BoardGameModel {
     public void move(int pieceNumber, KnightDirection direction) {
         pieces[pieceNumber].moveTo(direction);
         redSquares.add(pieces[pieceNumber].getPosition());
+        player = !player;
     }
 
     public static boolean isOnBoard(Position position) {
@@ -108,6 +109,8 @@ public class BoardGameModel {
         }
         return joiner.toString();
     }
+
+    public int getPlayer() { return player ? 0 : 1; }
 
 //    public static void main(String[] args) {
 //        BoardGameModel model = new BoardGameModel();

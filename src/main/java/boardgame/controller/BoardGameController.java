@@ -160,7 +160,7 @@ public class BoardGameController {
     private void setSelectablePositions() {
         selectablePositions.clear();
         switch (selectionPhase) {
-            case SELECT_FROM -> selectablePositions.addAll(model.getPiecePositions());
+            case SELECT_FROM -> selectablePositions.add(model.getPiecePosition(model.getPlayer()));
             case SELECT_TO -> {
                 var pieceNumber = model.getPieceNumber(selected).getAsInt();
                 for (var direction : model.getValidMoves(pieceNumber)) {
