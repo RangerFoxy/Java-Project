@@ -14,6 +14,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.effect.Light;
 import javafx.scene.input.MouseEvent;
@@ -200,5 +201,11 @@ public class BoardGameController {
         newSquare.getChildren().addAll(oldSquare.getChildren());
         oldSquare.getChildren().clear();
     }
+
+    @FXML
+    public void closeAction(ActionEvent event) throws IOException {
+        view.alert(event);
+    }
+
 
 }

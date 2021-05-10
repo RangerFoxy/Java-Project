@@ -5,14 +5,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+
+import javax.swing.*;
 import java.io.IOException;
+import java.util.Optional;
 
 public class Draw {
+
 
     public void draw(ActionEvent event, String url) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -25,6 +33,21 @@ public class Draw {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+    public void alert(ActionEvent event) throws IOException {
+        Alert exit = new Alert(Alert.AlertType.CONFIRMATION);
+        exit.setTitle("Exit to main menu");
+        exit.setHeaderText("Are you sure?");
+        exit.setContentText("You will return to the main menu.");
+        Optional<ButtonType> result = exit.showAndWait();
+        if (result.get().equals(ButtonType.OK)) {
+            Stage stage = (Stage) ((MenuItem) event.getSource()).getParentPopup().getOwnerWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/menu.fxml"));
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+    }
+
 
     public ImageView createPiece(String color) {
         var piece = new ImageView();

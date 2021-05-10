@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class PlayerSelectController {
@@ -48,6 +49,5 @@ public class PlayerSelectController {
             view.draw(event, "/fxml/ui.fxml");
         }
     }
-
 
 }
