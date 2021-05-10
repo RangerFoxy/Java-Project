@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,5 +24,11 @@ public class Draw {
         stage.show();
     }
 
+    public void drawPieces() {
 
+    }
+
+    public void drawRedSquare(StackPane square) {
+        square.getStyleClass().add("red");
+    }
 }

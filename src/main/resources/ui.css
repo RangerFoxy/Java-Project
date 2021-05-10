@@ -21,3 +21,8 @@
 .dark{
     -fx-background-color: #CD853F;
 }
+
+.red {
+    -fx-background-color: #FF0000;
+}
+

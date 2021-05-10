@@ -15,6 +15,8 @@ import java.io.IOException;
 
 public class PlayerSelectController {
 
+    private Draw view = new Draw();
+
     @FXML
     private TextField lightPlayerName;
 
@@ -29,8 +31,7 @@ public class PlayerSelectController {
     }*/
 
     public void backAction(ActionEvent event) {
-        Draw drawMenu = new Draw();
-        drawMenu.draw(event, "/fxml/menu.fxml");
+        view.draw(event, "/fxml/menu.fxml");
     }
 
 /*    public void startAction(ActionEvent event) throws IOException {
@@ -44,8 +45,7 @@ public class PlayerSelectController {
 
     public void startAction(ActionEvent event) {
         if (!lightPlayerName.getText().equals("") && !darkPlayerName.getText().equals("")) {
-            Draw drawUi = new Draw();
-            drawUi.draw(event, "/fxml/ui.fxml");
+            view.draw(event, "/fxml/ui.fxml");
         }
     }
 

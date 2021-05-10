@@ -1,13 +1,16 @@
 package boardgame.controller;
 
 import java.io.IOException;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import boardgame.Draw;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -46,6 +49,8 @@ public class BoardGameController {
     private Position selected;
 
     private BoardGameModel model = new BoardGameModel();
+
+    private Draw view = new Draw();
 
     @FXML
     private GridPane board;
@@ -189,6 +194,7 @@ public class BoardGameController {
     private void piecePositionChange(ObservableValue<? extends Position> observable, Position oldPosition, Position newPosition) {
         Logger.debug("Move: {} -> {}", oldPosition, newPosition);
         StackPane oldSquare = getSquare(oldPosition);
+        view.drawRedSquare(oldSquare);
         StackPane newSquare = getSquare(newPosition);
         newSquare.getChildren().addAll(oldSquare.getChildren());
         oldSquare.getChildren().clear();

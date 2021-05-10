@@ -8,6 +8,10 @@ public class BoardGameModel {
 
     public static int BOARD_SIZE = 8;
 
+    private boolean player = false;
+
+    public ArrayList<Position> redSquares = new ArrayList<>();
+
     private final Piece[] pieces;
 
     public BoardGameModel() {
@@ -24,6 +28,8 @@ public class BoardGameModel {
         if (! isOnBoard(pieces[0].getPosition()) || ! isOnBoard(pieces[1].getPosition()) || pieces[0].equals(pieces[1])) {
             throw new IllegalArgumentException();
         }
+        redSquares.add(pieces[0].getPosition());
+        redSquares.add(pieces[1].getPosition());
     }
 
     public int getPieceCount() {
@@ -47,7 +53,7 @@ public class BoardGameModel {
             throw new IllegalArgumentException();
         }
         Position newPosition = pieces[pieceNumber].getPosition().moveTo(direction);
-        if (! isOnBoard(newPosition)) {
+        if (! isOnBoard(newPosition) || redSquares.contains(newPosition)) {
             return false;
         }
         for (var piece : pieces) {
@@ -70,6 +76,7 @@ public class BoardGameModel {
 
     public void move(int pieceNumber, KnightDirection direction) {
         pieces[pieceNumber].moveTo(direction);
+        redSquares.add(pieces[pieceNumber].getPosition());
     }
 
     public static boolean isOnBoard(Position position) {

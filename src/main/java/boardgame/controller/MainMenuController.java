@@ -14,6 +14,8 @@ import java.io.IOException;
 
 public class MainMenuController {
 
+    private Draw view = new Draw();
+
     @FXML
     public Button playButton;
 
@@ -25,8 +27,7 @@ public class MainMenuController {
     }*/
 
     public void playAction(ActionEvent event) {
-        Draw drawPlayerSelect = new Draw();
-        drawPlayerSelect.draw(event, "/fxml/player_select.fxml");
+        view.draw(event, "/fxml/player_select.fxml");
     }
 
 
