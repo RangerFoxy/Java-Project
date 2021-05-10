@@ -14,7 +14,7 @@ public class BoardGameModel {
 
     private boolean player = true;
 
-    public ArrayList<Position> redSquares = new ArrayList<>();
+    private ArrayList<Position> redSquares = new ArrayList<>();
 
     private final Piece[] pieces;
 
@@ -32,8 +32,8 @@ public class BoardGameModel {
         if (! isOnBoard(pieces[0].getPosition()) || ! isOnBoard(pieces[1].getPosition()) || pieces[0].equals(pieces[1])) {
             throw new IllegalArgumentException();
         }
-        redSquares.add(pieces[0].getPosition());
-        redSquares.add(pieces[1].getPosition());
+        getRedSquares().add(pieces[0].getPosition());
+        getRedSquares().add(pieces[1].getPosition());
     }
 
     public int getPieceCount() {
@@ -57,7 +57,7 @@ public class BoardGameModel {
             throw new IllegalArgumentException();
         }
         Position newPosition = pieces[pieceNumber].getPosition().moveTo(direction);
-        if (! isOnBoard(newPosition) || redSquares.contains(newPosition)) {
+        if (! isOnBoard(newPosition) || getRedSquares().contains(newPosition)) {
             return false;
         }
         for (var piece : pieces) {
@@ -81,7 +81,7 @@ public class BoardGameModel {
 
     public void move(int pieceNumber, KnightDirection direction) {
         pieces[pieceNumber].moveTo(direction);
-        redSquares.add(pieces[pieceNumber].getPosition());
+        getRedSquares().add(pieces[pieceNumber].getPosition());
         player = !player;
     }
 
@@ -124,6 +124,14 @@ public class BoardGameModel {
     }
 
     public int getPlayer() { return player ? 0 : 1; }
+
+    public ArrayList<Position> getRedSquares() {
+        return redSquares;
+    }
+
+    public void setRedSquares(ArrayList<Position> redSquares) {
+        this.redSquares = redSquares;
+    }
 
 //    public static void main(String[] args) {
 //        BoardGameModel model = new BoardGameModel();

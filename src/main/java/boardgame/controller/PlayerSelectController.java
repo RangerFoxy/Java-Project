@@ -54,6 +54,7 @@ public class PlayerSelectController {
 
     public void startAction(ActionEvent event) {
         if (!lightPlayerName.getText().equals("") && !darkPlayerName.getText().equals("")) {
+
             view.draw(event, "/fxml/ui.fxml");
         }
     }

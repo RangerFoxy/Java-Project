@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="win" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Label alignment="CENTER" lineSpacing="1.0" text="CONGRATULATIONS!" textAlignment="CENTER" textFill="#eb0404" textOverrun="WORD_ELLIPSIS" underline="true" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Snap ITC" size="35.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <Label fx:id="playerName" alignment="CENTER" text="Label" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Snap ITC" size="45.0" />
+         </font>
+      </Label>
+   </center>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="New Game" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="150.0" />
+               </HBox.margin>
+            </Button>
+            <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Exit">
+               <HBox.margin>
+                  <Insets left="100.0" right="150.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
