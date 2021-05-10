@@ -205,7 +205,10 @@ public class BoardGameController {
 
     private void endGame() {
         if (model.winner()) {
-
+            if (model.isPlayer())
+                System.out.println("Világos nyert");
+            else
+                System.out.println("Sötét nyert");
         }
     }
 

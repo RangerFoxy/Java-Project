@@ -8,6 +8,10 @@ public class BoardGameModel {
 
     public static int BOARD_SIZE = 8;
 
+    public boolean isPlayer() {
+        return player;
+    }
+
     private boolean player = true;
 
     public ArrayList<Position> redSquares = new ArrayList<>();
@@ -105,6 +109,7 @@ public class BoardGameModel {
 
     public boolean winner() {
         if (getValidMoves(player ? 1 : 0).isEmpty()) {
+            System.out.println(player);
             return true;
         }
         return false;
