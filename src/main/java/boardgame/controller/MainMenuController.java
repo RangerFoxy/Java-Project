@@ -19,13 +19,6 @@ public class MainMenuController {
     @FXML
     public Button playButton;
 
-    /*public void playAction(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/player_select.fxml"));
-        stage.setScene(new Scene(root));
-        stage.show();
-    }*/
-
     public void playAction(ActionEvent event) {
         view.draw(event, "/fxml/player_select.fxml");
     }

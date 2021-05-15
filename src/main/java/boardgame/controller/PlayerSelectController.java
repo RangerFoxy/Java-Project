@@ -32,25 +32,9 @@ public class PlayerSelectController {
     @FXML
     private TextField darkPlayerName;
 
-/*    public void backAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/menu.fxml"));
-        stage.setScene(new Scene(root));
-        stage.show();
-    }*/
-
     public void backAction(ActionEvent event) {
         view.draw(event, "/fxml/menu.fxml");
     }
-
-/*    public void startAction(ActionEvent event) throws IOException {
-        if (!lightPlayerName.getText().equals("") && !darkPlayerName.getText().equals("")) {
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/ui.fxml"));
-            stage.setScene(new Scene(root));
-            stage.show();
-        }
-    }*/
 
     public void startAction(ActionEvent event) {
         if (!lightPlayerName.getText().equals("") && !darkPlayerName.getText().equals("")) {

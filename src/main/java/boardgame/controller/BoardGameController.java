@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import boardgame.Draw;
+import boardgame.model.Player;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -205,7 +206,7 @@ public class BoardGameController {
 
     private void endGame() {
         if (model.winner()) {
-            if (model.isPlayer())
+            if (model.isPlayer() == Player.LIGHT)
                 System.out.println("Világos nyert");
             else
                 System.out.println("Sötét nyert");
