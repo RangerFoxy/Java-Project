@@ -222,12 +222,15 @@ public class BoardGameController {
 
     private void endGame() {
         if (model.winner()) {
+            Stage stage = (Stage) lightPlayerName.getScene().getWindow();
             if (model.isPlayer() == Player.LIGHT) {
                 Logger.info("Világos nyert");
+                stage.close();
                 view.victory(lightPlayerName.getText()+" won!");
             }
             else {
                 Logger.info("Sötét nyert");
+                stage.close();
                 view.victory(darkPlayerName.getText()+" won!");
             }
         }
