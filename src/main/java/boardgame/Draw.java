@@ -53,7 +53,7 @@ public class Draw {
         Alert help = new Alert(Alert.AlertType.INFORMATION);
         help.setTitle("The rules of the game");
         help.setHeaderText("Rules");
-        help.setContentText("Move your knight to achieve that the opponent cannot move to another tile!");
+        help.setContentText("Move your knight to achieve that the opponent cannot move to another tile! The player who made the last valid move will win.");
         help.showAndWait();
     }
 
