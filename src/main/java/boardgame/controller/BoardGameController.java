@@ -56,8 +56,6 @@ public class BoardGameController {
 
     private Draw view = new Draw();
 
-    private WinnerController win = new WinnerController();
-
     @FXML
     private Label lightPlayerName;
 
@@ -73,9 +71,6 @@ public class BoardGameController {
     public void setDarkPlayerName(String name) {
         darkPlayerName.setText(name);
     }
-
-    @FXML
-    private Label hiddenLabel;
 
     @FXML
     private GridPane board;
