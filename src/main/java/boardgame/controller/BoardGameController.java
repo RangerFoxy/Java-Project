@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.effect.Light;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -54,6 +55,9 @@ public class BoardGameController {
     private BoardGameModel model = new BoardGameModel();
 
     private Draw view = new Draw();
+
+    @FXML
+    private Label hiddenLabel;
 
     @FXML
     private GridPane board;
@@ -206,10 +210,14 @@ public class BoardGameController {
 
     private void endGame() {
         if (model.winner()) {
-            if (model.isPlayer() == Player.LIGHT)
-                System.out.println("Világos nyert");
-            else
-                System.out.println("Sötét nyert");
+            if (model.isPlayer() == Player.LIGHT) {
+                Logger.info("Világos nyert");
+
+            }
+            else {
+                Logger.info("Sötét nyert");
+
+            }
         }
     }
 
