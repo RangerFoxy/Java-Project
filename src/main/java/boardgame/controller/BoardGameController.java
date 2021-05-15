@@ -59,6 +59,22 @@ public class BoardGameController {
     private WinnerController win = new WinnerController();
 
     @FXML
+    private Label lightPlayerName;
+
+    @FXML
+    private Label darkPlayerName;
+
+    @FXML
+    public void setLightPlayerName(String name) {
+        lightPlayerName.setText(name);
+    }
+
+    @FXML
+    public void setDarkPlayerName(String name) {
+        darkPlayerName.setText(name);
+    }
+
+    @FXML
     private Label hiddenLabel;
 
     @FXML
