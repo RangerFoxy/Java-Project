@@ -90,6 +90,7 @@ public class BoardGameController {
                 board.add(square, j, i);
             }
         }
+        Logger.debug("The board has been created.");
     }
 
     private StackPane createSquare(int i, int j) {
@@ -109,6 +110,7 @@ public class BoardGameController {
             var piece = view.createPiece(model.getPieceType(i).name());
             getSquare(model.getPiecePosition(i)).getChildren().add(piece);
         }
+        Logger.debug("Pieces have been created.");
     }
 
     @FXML
@@ -219,12 +221,12 @@ public class BoardGameController {
         if (model.winner()) {
             Stage stage = (Stage) lightPlayerName.getScene().getWindow();
             if (model.isPlayer() == Player.LIGHT) {
-                Logger.info("Világos nyert");
+                Logger.info("Light side won!");
                 stage.close();
                 view.victory(lightPlayerName.getText()+" won!");
             }
             else {
-                Logger.info("Sötét nyert");
+                Logger.info("Dark side won!");
                 stage.close();
                 view.victory(darkPlayerName.getText()+" won!");
             }

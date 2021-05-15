@@ -1,6 +1,5 @@
 package boardgame;
 
-import boardgame.controller.BoardGameController;
 import boardgame.controller.WinnerController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -8,18 +7,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
 import org.tinylog.Logger;
-
-import javax.imageio.IIOException;
-import javax.swing.*;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -37,7 +31,8 @@ public class Draw {
         stage.show();
     }
 
-    public void nameAlert(ActionEvent event) {
+    public void nameAlert() {
+        Logger.warn("Incorrect name is given by a player!");
         Alert name = new Alert(Alert.AlertType.WARNING);
         name.setTitle("Incorrect name!");
         name.setHeaderText("Incorrect name");
@@ -46,12 +41,14 @@ public class Draw {
     }
 
     public void exitAlert(ActionEvent event) throws IOException {
+        Logger.info("An alert has been occured!");
         Alert exit = new Alert(Alert.AlertType.CONFIRMATION);
         exit.setTitle("Exit to main menu");
         exit.setHeaderText("Are you sure?");
         exit.setContentText("You will return to the main menu.");
         Optional<ButtonType> result = exit.showAndWait();
         if (result.get().equals(ButtonType.OK)) {
+            Logger.info("The user quit from the game.");
             Stage stage = (Stage) ((MenuItem) event.getSource()).getParentPopup().getOwnerWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/menu.fxml"));
             stage.setScene(new Scene(root));
@@ -60,6 +57,7 @@ public class Draw {
     }
 
     public void help() {
+        Logger.info("The user opened the help menu.");
         Alert help = new Alert(Alert.AlertType.INFORMATION);
         help.setTitle("The rules of the game");
         help.setHeaderText("Rules");
@@ -76,6 +74,7 @@ public class Draw {
             stage.setTitle("Victory");
             stage.setScene(new Scene(root));
             stage.show();
+            Logger.info("Victory scene is opened.");
         } catch (IOException e) {
             Logger.error("IOException has been occured!");
             System.exit(1);
