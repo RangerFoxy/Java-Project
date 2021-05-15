@@ -26,3 +26,13 @@
     -fx-background-color: #FF0000;
 }
 
+#main {
+    -fx-background-image: url("/images/main.png");
+    -fx-background-position: center;
+}
+
+#players {
+    -fx-background-image: url("/images/players.png");
+    -fx-background-position: center;
+}
+
