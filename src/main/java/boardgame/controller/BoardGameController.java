@@ -116,12 +116,6 @@ public class BoardGameController {
         }
     }
 
-/*    private Circle createPiece(Color color) {
-        var piece = new Circle(25);
-        piece.setFill(color);
-        return piece;
-    }*/
-
     @FXML
     private void handleMouseClick(MouseEvent event) {
         var square = (StackPane) event.getSource();
@@ -230,11 +224,11 @@ public class BoardGameController {
         if (model.winner()) {
             if (model.isPlayer() == Player.LIGHT) {
                 Logger.info("Világos nyert");
-                view.victory("Light side won!");
+                view.victory(lightPlayerName.getText()+" won!");
             }
             else {
                 Logger.info("Sötét nyert");
-                view.victory("Dark side won!");
+                view.victory(darkPlayerName.getText()+" won!");
             }
         }
     }

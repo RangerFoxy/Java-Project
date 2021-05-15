@@ -1,5 +1,6 @@
 package boardgame;
 
+import boardgame.controller.BoardGameController;
 import boardgame.controller.WinnerController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +24,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class Draw {
-    
+
     public void draw(ActionEvent event, String url) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = null;
