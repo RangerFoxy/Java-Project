@@ -56,6 +56,8 @@ public class BoardGameController {
 
     private Draw view = new Draw();
 
+    private WinnerController win = new WinnerController();
+
     @FXML
     private Label hiddenLabel;
 
@@ -212,11 +214,11 @@ public class BoardGameController {
         if (model.winner()) {
             if (model.isPlayer() == Player.LIGHT) {
                 Logger.info("Világos nyert");
-                view.victory();
+                view.victory("Light side won!");
             }
             else {
                 Logger.info("Sötét nyert");
-                view.victory();
+                view.victory("Dark side won!");
             }
         }
     }

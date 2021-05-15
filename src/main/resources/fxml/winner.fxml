@@ -20,13 +20,10 @@
       </Label>
    </top>
    <center>
-      <Label fx:id="playerName" alignment="CENTER" text="Label" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Label fx:id="side" alignment="CENTER" text="Label" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
             <Font name="Snap ITC" size="45.0" />
          </font>
-         <effect>
-            <DropShadow />
-         </effect>
       </Label>
    </center>
    <bottom>

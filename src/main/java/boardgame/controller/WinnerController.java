@@ -11,7 +11,7 @@ public class WinnerController {
     private Draw view = new Draw();
 
     @FXML
-    private Label playerName;
+    private Label side;
 
     @FXML
     private Button newGameButton;
@@ -30,7 +30,7 @@ public class WinnerController {
     }
 
     @FXML
-    public void changeLabel() {
-
+    public void changeLabel(String text) {
+        side.setText(text);
     }
 }

@@ -1,5 +1,6 @@
 package boardgame;
 
+import boardgame.controller.WinnerController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -58,10 +59,11 @@ public class Draw {
         help.showAndWait();
     }
 
-    public void victory() {
+    public void victory(String text) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/winner.fxml"));
             Parent root = fxmlLoader.load();
+            fxmlLoader.<WinnerController>getController().changeLabel(text);
             Stage stage = new Stage();
             stage.setTitle("Victory");
             stage.setScene(new Scene(root));
