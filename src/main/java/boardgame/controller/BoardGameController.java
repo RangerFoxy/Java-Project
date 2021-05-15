@@ -212,11 +212,11 @@ public class BoardGameController {
         if (model.winner()) {
             if (model.isPlayer() == Player.LIGHT) {
                 Logger.info("Világos nyert");
-
+                view.victory();
             }
             else {
                 Logger.info("Sötét nyert");
-
+                view.victory();
             }
         }
     }

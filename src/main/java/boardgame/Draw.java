@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import org.tinylog.Logger;
 
 import javax.imageio.IIOException;
 import javax.swing.*;
@@ -58,6 +59,17 @@ public class Draw {
     }
 
     public void victory() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/winner.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Victory");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            Logger.error("IOException has been occured!");
+            System.exit(1);
+        }
 
     }
 
