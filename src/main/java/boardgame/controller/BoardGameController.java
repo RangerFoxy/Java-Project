@@ -233,7 +233,7 @@ public class BoardGameController {
 
     @FXML
     private void closeAction(ActionEvent event) throws IOException {
-        view.alert(event);
+        view.exitAlert(event);
     }
 
     @FXML

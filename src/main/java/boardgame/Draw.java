@@ -37,7 +37,15 @@ public class Draw {
         stage.show();
     }
 
-    public void alert(ActionEvent event) throws IOException {
+    public void nameAlert(ActionEvent event) {
+        Alert name = new Alert(Alert.AlertType.WARNING);
+        name.setTitle("Incorrect name!");
+        name.setHeaderText("Incorrect name");
+        name.setContentText("Both player need to provide their names and they cannot be the same!");
+        name.showAndWait();
+    }
+
+    public void exitAlert(ActionEvent event) throws IOException {
         Alert exit = new Alert(Alert.AlertType.CONFIRMATION);
         exit.setTitle("Exit to main menu");
         exit.setHeaderText("Are you sure?");
