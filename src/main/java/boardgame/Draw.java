@@ -72,6 +72,8 @@ public class Draw {
             fxmlLoader.<WinnerController>getController().changeLabel(text);
             Stage stage = new Stage();
             stage.setTitle("Victory");
+            stage.setResizable(false);
+            stage.getIcons().add(new Image("/images/icon.png"));
             stage.setScene(new Scene(root));
             stage.show();
             Logger.info("Victory scene is opened.");

@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import org.tinylog.Logger;
 
 public class WinnerController {
 
@@ -21,11 +22,13 @@ public class WinnerController {
 
     @FXML
     public void newAction(ActionEvent event) {
+        Logger.info("The user clicked the New Game button and a new game has been started.");
         view.draw(event, "/fxml/ui.fxml");
     }
 
     @FXML
     public void exitAction(ActionEvent event) {
+        Logger.info("The user quit to the main menu.");
         view.draw(event, "/fxml/menu.fxml");
     }
 

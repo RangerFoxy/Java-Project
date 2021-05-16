@@ -36,3 +36,7 @@
     -fx-background-position: center;
 }
 
+#win {
+    -fx-background-image: url("/images/congrat.png");
+    -fx-background-position: center;
+}
