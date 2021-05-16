@@ -1,6 +1,5 @@
 package boardgame.controller;
 
-import boardgame.Draw;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

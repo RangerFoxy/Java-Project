@@ -1,4 +1,4 @@
-package boardgame;
+package boardgame.controller;
 
 import boardgame.controller.WinnerController;
 import javafx.event.ActionEvent;
