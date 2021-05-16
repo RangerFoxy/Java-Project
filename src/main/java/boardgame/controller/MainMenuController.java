@@ -26,7 +26,7 @@ public class MainMenuController {
     @FXML
     public void scoreboardAction(ActionEvent event) {
         Logger.info("The user pushed the Scoreboard button and opened the Scoreboard Scene");
-
+        view.draw(event, "/fxml/scoreboard.fxml");
     }
 
     @FXML

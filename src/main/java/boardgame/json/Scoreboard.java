@@ -22,7 +22,7 @@ public class Scoreboard {
 
     private static final File scoreboardFile = new File("./scoreboard.json");
 
-    private List<Elements> scoreboardElements;
+    private List<ScoreboardElements> scoreboardElements;
 
     public static Scoreboard getInstance() {
         if (scoreboard == null)
@@ -49,7 +49,7 @@ public class Scoreboard {
 
     private void loadScoreboard(InputStream inputStream){
         try {
-            scoreboardElements = OBJECT_MAPPER.readValue(inputStream, new TypeReference<List<Elements>>() {}); {
+            scoreboardElements = OBJECT_MAPPER.readValue(inputStream, new TypeReference<List<ScoreboardElements>>() {}); {
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,11 +57,11 @@ public class Scoreboard {
         }
     }
 
-    public List<Elements> getLeaderboard() {
+    public List<ScoreboardElements> getScoreboard() {
         try {
             loadScoreboard(new FileInputStream(scoreboardFile));
             return scoreboardElements.stream()
-                    .sorted(Comparator.comparing(Elements::getDate)).collect(Collectors.toList());
+                    .sorted(Comparator.comparing(ScoreboardElements::getDate)).collect(Collectors.toList());
         }catch(IOException e) {
             e.printStackTrace();
             Logger.warn("An I/O Exception has been occurred!");
@@ -69,12 +69,12 @@ public class Scoreboard {
         throw new IllegalArgumentException();
     }
 
-    public void saveScoreboardElement(Elements element) {
+    public void saveScoreboardElement(ScoreboardElements element) {
         try {
             FileWriter fileWriter = new FileWriter(scoreboardFile);
 
             SequenceWriter sequenceWriter = OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValuesAsArray(fileWriter);
-            for(Elements scoreboardElement: scoreboardElements){
+            for(ScoreboardElements scoreboardElement: scoreboardElements){
                 sequenceWriter.write(scoreboardElement);
             }
             sequenceWriter.write(element);
