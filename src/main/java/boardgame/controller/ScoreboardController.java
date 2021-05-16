@@ -1,7 +1,7 @@
 package boardgame.controller;
 
-import boardgame.json.Leaderboard;
-import boardgame.json.LeaderboardElement;
+import boardgame.json.Scoreboard;
+import boardgame.json.Element;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,7 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.tinylog.Logger;
 import java.util.List;
 
-public class LeaderboardController {
+public class ScoreboardController {
 
     private Draw view = new Draw();
 
@@ -31,17 +31,17 @@ public class LeaderboardController {
     @FXML
     TableColumn lightColumn;
 
-    Leaderboard leaderboard = Leaderboard.getInstance();
+    Scoreboard leaderboard = Scoreboard.getInstance();
 
     public void initialize() {
-        List<LeaderboardElement> leaderboardList = leaderboard.getLeaderboard();
+        List<Element> leaderboardList = leaderboard.getLeaderboard();
 
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         lightColumn.setCellValueFactory(new PropertyValueFactory<>("lightPlayer"));
         darkColumn.setCellValueFactory(new PropertyValueFactory<>("darkPlayer"));
         winnerColumn.setCellValueFactory(new PropertyValueFactory<>("winner"));
 
-        ObservableList<LeaderboardElement> observableResult = FXCollections.observableArrayList();
+        ObservableList<Element> observableResult = FXCollections.observableArrayList();
         observableResult.addAll(leaderboardList);
 
         leaderboardTable.setItems(observableResult);

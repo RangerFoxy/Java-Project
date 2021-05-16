@@ -6,8 +6,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-import boardgame.json.Leaderboard;
-import boardgame.json.LeaderboardElement;
+import boardgame.json.Scoreboard;
+import boardgame.json.Element;
 import boardgame.model.Player;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -46,7 +46,7 @@ public class BoardGameController {
 
     private Draw view = new Draw();
 
-    private Leaderboard leaderboard = Leaderboard.getInstance();
+    private Scoreboard leaderboard = Scoreboard.getInstance();
 
     @FXML
     private Label lightPlayerName;
@@ -210,7 +210,7 @@ public class BoardGameController {
     }
 
     private void saveToScoreboard(String winner) {
-        LeaderboardElement result = LeaderboardElement.builder()
+        Element result = Element.builder()
                 .date(ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd. - HH:mm:ss")))
                 .lightPlayer(lightPlayerName.getText())
                 .darkPlayer(darkPlayerName.getText())
