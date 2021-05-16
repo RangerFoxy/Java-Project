@@ -4,13 +4,10 @@ import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import boardgame.json.Leaderboard;
 import boardgame.json.LeaderboardElement;
-import boardgame.json.Scoreboard;
-import boardgame.json.ScoreboardElements;
 import boardgame.model.Player;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -48,8 +45,6 @@ public class BoardGameController {
     private BoardGameModel model = new BoardGameModel();
 
     private Draw view = new Draw();
-
-    private Scoreboard scoreboard = Scoreboard.getInstance();
 
     private Leaderboard leaderboard = Leaderboard.getInstance();
 
