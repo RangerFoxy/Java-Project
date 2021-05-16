@@ -11,6 +11,3 @@ and neither of them can move their piece to that tile again. The player who made
 
 This project based on an example project made by Dr. Péter Jeszenszky. You can find his repository here:
 [jeszy75](https://github.com/jeszy75/)
-
-
-

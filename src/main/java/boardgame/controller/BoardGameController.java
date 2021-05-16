@@ -3,7 +3,6 @@ package boardgame.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import boardgame.model.Player;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -12,10 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-
 import javafx.stage.Stage;
 import org.tinylog.Logger;
-
 import boardgame.model.BoardGameModel;
 import boardgame.model.KnightDirection;
 import boardgame.model.Position;

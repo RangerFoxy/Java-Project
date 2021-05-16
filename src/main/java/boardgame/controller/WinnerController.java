@@ -2,7 +2,6 @@ package boardgame.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import org.tinylog.Logger;
 
@@ -12,12 +11,6 @@ public class WinnerController {
 
     @FXML
     private Label side;
-
-    @FXML
-    private Button newGameButton;
-
-    @FXML
-    private Button exitButton;
 
     @FXML
     public void newAction(ActionEvent event) {
@@ -35,4 +28,5 @@ public class WinnerController {
     public void changeLabel(String text) {
         side.setText(text);
     }
+
 }

@@ -1,6 +1,5 @@
 package boardgame.controller;
 
-import boardgame.controller.WinnerController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -25,6 +24,7 @@ public class Draw {
         try {
             root = FXMLLoader.load(getClass().getResource(url));
         } catch (IOException e) {
+            Logger.error("An I/O Exception has been occurred!");
             e.printStackTrace();
         }
         stage.setScene(new Scene(root));
@@ -78,7 +78,8 @@ public class Draw {
             stage.show();
             Logger.info("Victory scene is opened.");
         } catch (IOException e) {
-            Logger.error("IOException has been occured!");
+            Logger.error("An I/O Exception has been occurred!");
+            e.printStackTrace();
             System.exit(1);
         }
 
@@ -93,4 +94,5 @@ public class Draw {
     public void drawRedSquare(StackPane square) {
         square.getStyleClass().add("red");
     }
+
 }

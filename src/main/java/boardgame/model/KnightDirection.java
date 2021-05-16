@@ -1,5 +1,8 @@
 package boardgame.model;
 
+/**
+ *
+ */
 public enum KnightDirection implements Direction {
 
     LEFT_UP(-1, -2),
@@ -14,19 +17,42 @@ public enum KnightDirection implements Direction {
     private final int rowChange;
     private final int colChange;
 
+    /**
+     *
+     *
+     * @param rowChange
+     * @param colChange
+     */
     KnightDirection(int rowChange, int colChange) {
         this.rowChange = rowChange;
         this.colChange = colChange;
     }
 
+    /**
+     *
+     *
+     * @return
+     */
     public int getRowChange() {
         return rowChange;
     }
 
+    /**
+     *
+     *
+     * @return
+     */
     public int getColChange() {
         return colChange;
     }
 
+    /**
+     *
+     *
+     * @param rowChange
+     * @param colChange
+     * @return
+     */
     public static KnightDirection of(int rowChange, int colChange) {
         for (var direction : values()) {
             if (direction.rowChange == rowChange && direction.colChange == colChange) {
@@ -35,9 +61,5 @@ public enum KnightDirection implements Direction {
         }
         throw new IllegalArgumentException();
     }
-
-/*    public static void main(String[] args) {
-        System.out.println(of(1, 2));
-    }*/
 
 }
