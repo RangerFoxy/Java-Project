@@ -22,7 +22,7 @@
                   <Font name="Microsoft YaHei Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="scoreboardButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Scoreboard">
+            <Button fx:id="scoreboardButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#scoreboardAction" prefHeight="35.0" prefWidth="100.0" text="Scoreboard">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>

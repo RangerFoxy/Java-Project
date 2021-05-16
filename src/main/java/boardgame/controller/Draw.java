@@ -71,7 +71,7 @@ public class Draw {
             Parent root = fxmlLoader.load();
             fxmlLoader.<WinnerController>getController().changeLabel(text);
             Stage stage = new Stage();
-            stage.setTitle("Victory");
+            stage.setTitle("2 Knight Chess");
             stage.setResizable(false);
             stage.getIcons().add(new Image("/images/icon.png"));
             stage.setScene(new Scene(root));
