@@ -1,8 +1,16 @@
 package boardgame.controller;
 
 import java.io.IOException;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import boardgame.json.Leaderboard;
+import boardgame.json.LeaderboardElement;
+import boardgame.json.Scoreboard;
+import boardgame.json.ScoreboardElements;
 import boardgame.model.Player;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -40,6 +48,10 @@ public class BoardGameController {
     private BoardGameModel model = new BoardGameModel();
 
     private Draw view = new Draw();
+
+    private Scoreboard scoreboard = Scoreboard.getInstance();
+
+    private Leaderboard leaderboard = Leaderboard.getInstance();
 
     @FXML
     private Label lightPlayerName;
@@ -202,16 +214,31 @@ public class BoardGameController {
         endGame();
     }
 
+    private void saveToScoreboard(String winner) {
+        LeaderboardElement result = LeaderboardElement.builder()
+                .date(ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd. - HH:mm:ss")))
+                .lightPlayer(lightPlayerName.getText())
+                .darkPlayer(darkPlayerName.getText())
+                .winner(winner)
+                .build();
+        Logger.debug("Results of the game is saved to the leaderboard.");
+
+        leaderboard.saveLeaderboardElement(result);
+        Logger.info("The Scoreboard is updated.");
+    }
+
     private void endGame() {
         if (model.winner()) {
             Stage stage = (Stage) lightPlayerName.getScene().getWindow();
             if (model.isPlayer() == Player.LIGHT) {
                 Logger.info("Light side won!");
+                saveToScoreboard(lightPlayerName.getText());
                 stage.close();
                 view.victory(lightPlayerName.getText()+" won!");
             }
             else {
                 Logger.info("Dark side won!");
+                saveToScoreboard(darkPlayerName.getText());
                 stage.close();
                 view.victory(darkPlayerName.getText()+" won!");
             }
@@ -224,7 +251,7 @@ public class BoardGameController {
     }
 
     @FXML
-    private void rulesAction(ActionEvent event) throws IOException {
+    private void rulesAction() {
         view.help();
     }
 
