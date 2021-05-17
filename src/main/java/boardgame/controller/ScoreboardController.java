@@ -1,7 +1,7 @@
 package boardgame.controller;
 
-import boardgame.json.Scoreboard;
-import boardgame.json.Element;
+import boardgame.controller.json.Scoreboard;
+import boardgame.controller.json.Element;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

@@ -1,4 +1,4 @@
-package boardgame.json;
+package boardgame.controller.json;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -69,7 +69,7 @@ public class Scoreboard {
             FileWriter fileWriter = new FileWriter(leaderboardFile);
 
             SequenceWriter sequenceWriter = OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValuesAsArray(fileWriter);
-            for(boardgame.json.Element leaderboardElement: leaderboardElements){
+            for(boardgame.controller.json.Element leaderboardElement: leaderboardElements){
                 sequenceWriter.write(leaderboardElement);
             }
             sequenceWriter.write(Element);

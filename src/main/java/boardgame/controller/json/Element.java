@@ -1,4 +1,4 @@
-package boardgame.json;
+package boardgame.controller.json;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
