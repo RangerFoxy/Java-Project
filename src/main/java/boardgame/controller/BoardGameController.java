@@ -1,14 +1,12 @@
 package boardgame.controller;
 
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-
-import boardgame.controller.json.Scoreboard;
-import boardgame.controller.json.Element;
+import boardgame.json.Scoreboard;
+import boardgame.json.Element;
 import boardgame.model.Player;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;

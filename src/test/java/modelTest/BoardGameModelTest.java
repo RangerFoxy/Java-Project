@@ -14,6 +14,7 @@ public class BoardGameModelTest {
     void testGetPieceNumber() {
        Piece piece = new Piece(PieceType.LIGHT, new Position(0, 0));
        assertEquals(boardgameModel.getPieceNumber(piece.getPosition()), OptionalInt.of(0));
+       assertEquals(boardgameModel.getPieceNumber(new Position(0, 1)), OptionalInt.empty());
     }
 
     @Test
@@ -41,6 +42,7 @@ public class BoardGameModelTest {
         boardgameModel.move(0, KnightDirection.DOWN_LEFT);
         boardgameModel.move(1, KnightDirection.DOWN_LEFT);
         boardgameModel.move(1, KnightDirection.UP_LEFT);
+
     }
 
     @Test

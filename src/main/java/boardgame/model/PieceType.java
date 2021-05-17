@@ -11,7 +11,7 @@ public enum PieceType {
     LIGHT,
 
     /**
-     * Black piece type.
+     * Dark piece type.
      */
     DARK
 }

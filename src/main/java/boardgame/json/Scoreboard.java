@@ -1,4 +1,4 @@
-package boardgame.controller.json;
+package boardgame.json;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,14 +10,24 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * A class for managing the JSON file and the Scoreboard.
+ */
 public class Scoreboard {
 
     private static Scoreboard leaderboard = null;
+
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper().registerModule(new JavaTimeModule());
-    private static final File leaderboardFile = new File("./scoreboard.json");
 
-    private List<Element> leaderboardElements;
+    private static final File leaderboardFile = new File(System.getProperty("user.home")+File.separator+"scoreboard.json");
 
+    private List<Element> scoreboardElements;
+
+    /**
+     * Returns the {@code Scoreboard} instance.
+     *
+     * @return {@code Scoreboard} object
+     */
     public static Scoreboard getInstance(){
         if(leaderboard == null){
             leaderboard = new Scoreboard();
@@ -32,7 +42,7 @@ public class Scoreboard {
                 FileWriter fileWriter = new FileWriter(leaderboardFile);
                 fileWriter.write("[]");
                 fileWriter.close();
-                leaderboardElements = List.of();
+                scoreboardElements = List.of();
             } else {
                 loadLeaderboard(new FileInputStream(leaderboardFile));
             }
@@ -44,7 +54,7 @@ public class Scoreboard {
 
     private void loadLeaderboard(InputStream is){
         try {
-            leaderboardElements = OBJECT_MAPPER.readValue(is, new TypeReference<List<Element>>() {}); {
+            scoreboardElements = OBJECT_MAPPER.readValue(is, new TypeReference<List<Element>>() {}); {
             }
         } catch (IOException e) {
             Logger.warn("An I/O Exception has been occurred!");
@@ -52,24 +62,34 @@ public class Scoreboard {
         }
     }
 
+    /**
+     * Gets all the elements of the Scoreboard from the scoreboard.json file.
+     *
+     * @return the scoreboard elements ordered by date
+     */
     public List<Element> getLeaderboard() {
         try {
             loadLeaderboard(new FileInputStream(leaderboardFile));
-            return leaderboardElements.stream()
+            return scoreboardElements.stream()
                     .sorted(Comparator.comparing(Element::getDate)).collect(Collectors.toList());
         }catch(IOException e) {
             Logger.warn("An I/O Exception has been occurred!");
             e.printStackTrace();
         }
-        throw new IllegalArgumentException("An Exception has been occurred!");
+        throw new IllegalArgumentException();
     }
 
+    /**
+     *
+     *
+     * @param Element
+     */
     public void saveScoreboardElement(Element Element){
         try {
             FileWriter fileWriter = new FileWriter(leaderboardFile);
 
             SequenceWriter sequenceWriter = OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValuesAsArray(fileWriter);
-            for(boardgame.controller.json.Element leaderboardElement: leaderboardElements){
+            for(boardgame.json.Element leaderboardElement: scoreboardElements){
                 sequenceWriter.write(leaderboardElement);
             }
             sequenceWriter.write(Element);

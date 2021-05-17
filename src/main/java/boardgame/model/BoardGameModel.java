@@ -10,18 +10,9 @@ import java.util.*;
 public class BoardGameModel {
 
     /**
-     *
+     * The number of rows and columns of the board.
      */
     public static int BOARD_SIZE = 8;
-
-    /**
-     *
-     *
-     * @return
-     */
-    public Player isPlayer() {
-        return currentPlayer;
-    }
 
     private Player currentPlayer = Player.LIGHT;
 
@@ -30,7 +21,7 @@ public class BoardGameModel {
     private final Piece[] pieces;
 
     /**
-     *
+     * Initailizes the game with a dark and a light pieces with their initial places.
      */
     public BoardGameModel() {
         this(new Piece(PieceType.LIGHT, new Position(0, 0)),
@@ -38,9 +29,9 @@ public class BoardGameModel {
     }
 
     /**
+     * Creates the game with the given {@code pieces} pieces.
      *
-     *
-     * @param pieces
+     * @param pieces the list of the pieces
      */
     public BoardGameModel(Piece... pieces) {
         checkPieces(pieces);
@@ -56,50 +47,50 @@ public class BoardGameModel {
     }
 
     /**
+     * Returns with the length of the {@code pieces} list (with the number of pieces).
      *
-     *
-     * @return
+     * @return the length of the pieces list
      */
     public int getPieceCount() {
         return pieces.length;
     }
 
     /**
+     * Returns the type of the given {@code pieceNumber} numbered piece. It's equal with the player's number.
      *
-     *
-     * @param pieceNumber
-     * @return
+     * @param pieceNumber the number of the piece (equal with the number of the player)
+     * @return the type of the piece
      */
     public PieceType getPieceType(int pieceNumber) {
         return pieces[pieceNumber].getType();
     }
 
     /**
+     * Returns the position of the piece from the {@code pieces} array.
      *
-     *
-     * @param pieceNumber
-     * @return
+     * @param pieceNumber an {@link Integer} representing the piece
+     * @return the position of the piece
      */
     public Position getPiecePosition(int pieceNumber) {
         return pieces[pieceNumber].getPosition();
     }
 
     /**
+     * Returns the position of the piece as an ObjectProperty from the {@code pieces} array.
      *
-     *
-     * @param pieceNumber
-     * @return
+     * @param pieceNumber an {@link Integer} representing the piece
+     * @return the position of the piece
      */
     public ObjectProperty<Position> positionProperty(int pieceNumber) {
         return pieces[pieceNumber].positionProperty();
     }
 
     /**
+     * Checks if a move with the piece given by the {@code pieceNumber} is possible or not.
      *
-     *
-     * @param pieceNumber
-     * @param direction
-     * @return
+     * @param pieceNumber the piece represented as an {@link Integer}
+     * @param direction the direction of the move
+     * @return if the move is possible or not
      */
     public boolean isValidMove(int pieceNumber, KnightDirection direction) {
         if (pieceNumber < 0 || pieceNumber >= pieces.length) {
@@ -119,10 +110,10 @@ public class BoardGameModel {
     }
 
     /**
+     * Checks the {@code KnightDirection} directions and stores every possible move.
      *
-     *
-     * @param pieceNumber
-     * @return
+     * @param pieceNumber the piece represented as an {@link Integer}
+     * @return the {@code validMoves} which is an {@link EnumSet}
      */
     public Set<KnightDirection> getValidMoves(int pieceNumber) {
         EnumSet<KnightDirection> validMoves = EnumSet.noneOf(KnightDirection.class);
@@ -135,10 +126,19 @@ public class BoardGameModel {
     }
 
     /**
+     * Returns the current player as a {@code Player}.
      *
+     * @return the current player
+     */
+    public Player isPlayer() {
+        return currentPlayer;
+    }
+
+    /**
+     * Moves the piece from the current position to the new position and switches the {@code currentPlayer}.
      *
-     * @param pieceNumber
-     * @param direction
+     * @param pieceNumber the piece represented as an {@link Integer}
+     * @param direction the direction of the move as a {@code KnightDirection}
      */
     public void move(int pieceNumber, KnightDirection direction) {
         pieces[pieceNumber].moveTo(direction);
@@ -147,10 +147,10 @@ public class BoardGameModel {
     }
 
     /**
+     * Checks if the given {@code position} position is on the board or not.
      *
-     *
-     * @param position
-     * @return
+     * @param position the position which is needed to be checked
+     * @return if the given {@code position} is on the board or not
      */
     public static boolean isOnBoard(Position position) {
         return 0 <= position.row() && position.row() < BOARD_SIZE
@@ -158,10 +158,11 @@ public class BoardGameModel {
     }
 
     /**
+     * Returns the piece's number, if on the given {@code Position} position there is a piece, otherwise it returns
+     * an empty {@link OptionalInt}.
      *
-     *
-     * @param position
-     * @return
+     * @param position the piece's position
+     * @return the number of the piece which is in the given {@code Position} position
      */
     public OptionalInt getPieceNumber(Position position) {
         for (int i = 0; i < pieces.length; i++) {
@@ -173,21 +174,18 @@ public class BoardGameModel {
     }
 
     /**
+     * Returns if the dark or light player has no more valid move.
      *
-     *
-     * @return
+     * @return if a player has no move
      */
     public boolean winner() {
-        if (getValidMoves(currentPlayer == Player.LIGHT ? 1 : 0).isEmpty()) {
-            return true;
-        }
-        return false;
+        return getValidMoves(currentPlayer == Player.LIGHT ? 1 : 0).isEmpty();
     }
 
     /**
+     * Return the {@link String} representation of the {@code BoardGameModel} object.
      *
-     *
-     * @return
+     * @return a {@link String} representing the object
      */
     public String toString() {
         StringJoiner joiner = new StringJoiner(",", "[", "]");
@@ -198,16 +196,16 @@ public class BoardGameModel {
     }
 
     /**
+     * Returns 0 if the {@code currentPlayer} is equal with {@code Player.LIGHT}, otherwise return with 1.
      *
-     *
-     * @return
+     * @return if it's the light or the dark player's turn
      */
     public int getPlayer() { return currentPlayer == Player.LIGHT ? 0 : 1; }
 
     /**
+     * Returns with the {@code redSquares} {@link ArrayList} (with the inactive tiles in it).
      *
-     *
-     * @return
+     * @return the {@code redSquares} {@link ArrayList}
      */
     public ArrayList<Position> getRedSquares() {
         return redSquares;

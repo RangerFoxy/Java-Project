@@ -21,13 +21,11 @@ public class PlayerSelectController {
     @FXML
     private TextField darkPlayerName;
 
-    @FXML
     public void backAction(ActionEvent event) {
         Logger.info("The user pushed the Back button and returned to the main menu.");
         view.draw(event, "/fxml/menu.fxml");
     }
 
-    @FXML
     public void startAction(ActionEvent event) {
         if (!lightPlayerName.getText().equals("") && !darkPlayerName.getText().equals("") && !lightPlayerName.getText().equals(darkPlayerName.getText())) {
             try {

@@ -8,8 +8,8 @@ import javafx.scene.control.TableView;
 import javafx.collections.FXCollections;
 import javafx.scene.control.TableColumn;
 import javafx.collections.ObservableList;
-import boardgame.controller.json.Element;
-import boardgame.controller.json.Scoreboard;
+import boardgame.json.Element;
+import boardgame.json.Scoreboard;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ScoreboardController {
@@ -48,7 +48,6 @@ public class ScoreboardController {
         leaderboardTable.setItems(observableResult);
     }
 
-    @FXML
     public void backAction(ActionEvent event) {
         Logger.debug("Back to Main menu.");
         view.draw(event, "/fxml/menu.fxml");

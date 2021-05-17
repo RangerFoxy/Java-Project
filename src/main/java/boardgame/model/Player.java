@@ -1,7 +1,7 @@
 package boardgame.model;
 
 /**
- * {@code Player} types represented in Enum.
+ * {@code Player} types represented in {@link Enum}.
  */
 public enum Player {
 
@@ -18,7 +18,7 @@ public enum Player {
     /**
      * Switches the {@code Player} types, it represents the turn based mechanism.
      *
-     * @return the opposite {@code Player} type.
+     * @return the opposite {@code Player} type
      */
     public Player alter() {
         return switch(this){
