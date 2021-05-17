@@ -46,7 +46,7 @@ public class BoardGameController {
 
     private Draw view = new Draw();
 
-    private Scoreboard leaderboard = Scoreboard.getInstance();
+    private Scoreboard scoreboard = Scoreboard.getInstance();
 
     @FXML
     private Label lightPlayerName;
@@ -218,7 +218,7 @@ public class BoardGameController {
                 .build();
         Logger.debug("Results of the game is saved to the leaderboard.");
 
-        leaderboard.saveLeaderboardElement(result);
+        scoreboard.saveScoreboardElement(result);
         Logger.info("The Scoreboard is updated.");
     }
 

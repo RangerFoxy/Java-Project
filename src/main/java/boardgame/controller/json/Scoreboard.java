@@ -64,7 +64,7 @@ public class Scoreboard {
         throw new IllegalArgumentException("An Exception has been occurred!");
     }
 
-    public void saveLeaderboardElement(Element Element){
+    public void saveScoreboardElement(Element Element){
         try {
             FileWriter fileWriter = new FileWriter(leaderboardFile);
 

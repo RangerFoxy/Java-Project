@@ -61,7 +61,8 @@ public class Piece {
 
     /**
      * Returns the string representation of the object in the following format:
-     * {@code "type"} + {@code "position"}.
+     * {@code "type"} + {@code "position"}
+     * eg. BLACK(0,0).
      *
      * @return the string representation of the position.
      * @return the string representation of the position.
