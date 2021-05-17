@@ -80,9 +80,9 @@ public class Scoreboard {
     }
 
     /**
+     * Writing a new element into the scoreboard.json file.
      *
-     *
-     * @param Element
+     * @param Element the element which is needed to be saved
      */
     public void saveScoreboardElement(Element Element){
         try {
