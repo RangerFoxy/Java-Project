@@ -11,4 +11,5 @@ public class PlayerTest {
         assertEquals(Player.LIGHT, Player.DARK.alter());
         assertEquals(Player.DARK, Player.LIGHT.alter());
     }
+
 }

@@ -1,9 +1,9 @@
 package boardgame.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import org.tinylog.Logger;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
 
 public class MainMenuController {
 
@@ -18,6 +18,7 @@ public class MainMenuController {
     @FXML
     public Button exitButton;
 
+    @FXML
     public void playAction(ActionEvent event) {
         Logger.info("The player pushed the Play button and opened the Player Selection scene.");
         view.draw(event, "/fxml/player_select.fxml");
@@ -34,4 +35,5 @@ public class MainMenuController {
         Logger.info("Exit from the game.");
         System.exit(0);
     }
+
 }

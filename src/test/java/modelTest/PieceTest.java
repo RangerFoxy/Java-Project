@@ -1,10 +1,10 @@
 package modelTest;
 
-import boardgame.model.KnightDirection;
 import boardgame.model.Piece;
-import boardgame.model.PieceType;
 import boardgame.model.Position;
+import boardgame.model.PieceType;
 import org.junit.jupiter.api.Test;
+import boardgame.model.KnightDirection;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PieceTest {

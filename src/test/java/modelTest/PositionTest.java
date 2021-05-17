@@ -1,9 +1,9 @@
 package modelTest;
 
-import boardgame.model.KnightDirection;
 import boardgame.model.Position;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import boardgame.model.KnightDirection;
+import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PositionTest {

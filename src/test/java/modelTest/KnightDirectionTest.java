@@ -1,7 +1,7 @@
 package modelTest;
 
-import boardgame.model.KnightDirection;
 import org.junit.jupiter.api.Test;
+import boardgame.model.KnightDirection;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class KnightDirectionTest {

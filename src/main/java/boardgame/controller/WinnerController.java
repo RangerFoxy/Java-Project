@@ -1,9 +1,9 @@
 package boardgame.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import org.tinylog.Logger;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 
 public class WinnerController {
 

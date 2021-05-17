@@ -1,16 +1,16 @@
 package boardgame.controller;
 
-import boardgame.controller.json.Scoreboard;
-import boardgame.controller.json.Element;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import org.tinylog.Logger;
 import java.util.List;
+import javafx.fxml.FXML;
+import org.tinylog.Logger;
+import javafx.event.ActionEvent;
+import javafx.scene.control.TableView;
+import javafx.collections.FXCollections;
+import javafx.scene.control.TableColumn;
+import javafx.collections.ObservableList;
+import boardgame.controller.json.Element;
+import boardgame.controller.json.Scoreboard;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ScoreboardController {
 
@@ -33,6 +33,7 @@ public class ScoreboardController {
 
     Scoreboard leaderboard = Scoreboard.getInstance();
 
+    @FXML
     public void initialize() {
         List<Element> leaderboardList = leaderboard.getLeaderboard();
 
@@ -47,8 +48,10 @@ public class ScoreboardController {
         leaderboardTable.setItems(observableResult);
     }
 
+    @FXML
     public void backAction(ActionEvent event) {
         Logger.debug("Back to Main menu.");
         view.draw(event, "/fxml/menu.fxml");
     }
+
 }
