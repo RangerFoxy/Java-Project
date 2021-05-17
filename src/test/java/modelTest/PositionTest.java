@@ -16,7 +16,7 @@ public class PositionTest {
     }
 
     @Test
-    void moving() {
+    void testMoving() {
         assertEquals(position.moveTo(KnightDirection.LEFT_UP), new Position(-1, -2));
         assertEquals(position.moveTo(KnightDirection.UP_LEFT), new Position(-2, -1));
         assertEquals(position.moveTo(KnightDirection.UP_RIGHT), new Position(-2, 1));
@@ -25,6 +25,11 @@ public class PositionTest {
         assertEquals(position.moveTo(KnightDirection.DOWN_RIGHT), new Position(2, 1));
         assertEquals(position.moveTo(KnightDirection.DOWN_LEFT), new Position(2, -1));
         assertEquals(position.moveTo(KnightDirection.LEFT_DOWN), new Position(1, -2));
+    }
+
+    @Test
+    void testToString() {
+        assertEquals("(0,0)", position.toString());
     }
 
 }

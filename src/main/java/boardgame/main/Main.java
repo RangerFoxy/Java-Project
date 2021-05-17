@@ -1,4 +1,4 @@
-package boardgame;
+package boardgame.main;
 
 import javafx.application.Application;
 

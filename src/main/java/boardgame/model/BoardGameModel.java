@@ -160,19 +160,6 @@ public class BoardGameModel {
     /**
      *
      *
-     * @return
-     */
-    public List<Position> getPiecePositions() {
-        List<Position> positions = new ArrayList<>(pieces.length);
-        for (var piece : pieces) {
-            positions.add(piece.getPosition());
-        }
-        return positions;
-    }
-
-    /**
-     *
-     *
      * @param position
      * @return
      */

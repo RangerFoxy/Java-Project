@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PlayerTest {
 
     @Test
-    void alter() {
+    void testAlter() {
         assertEquals(Player.LIGHT, Player.DARK.alter());
         assertEquals(Player.DARK, Player.LIGHT.alter());
     }
