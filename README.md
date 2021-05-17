@@ -1,6 +1,6 @@
 # 2 Knights Game
 
-This is a maven 3 project made for Software Engineering Course. It follows the MVC pattern.
+This is a maven 3 project made for Software Engineering Course. It follows the MVC pattern. Made with [OpenJFX](https://openjfx.io/)
 
 ## Rules
 
