@@ -15,11 +15,11 @@ import java.util.stream.Collectors;
  */
 public class Scoreboard {
 
-    private static Scoreboard leaderboard = null;
+    private static Scoreboard scoreboard = null;
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper().registerModule(new JavaTimeModule());
 
-    private static final File leaderboardFile = new File(System.getProperty("user.home")+File.separator+"scoreboard.json");
+    private static final File scoreboardFile = new File(System.getProperty("user.home")+File.separator+"scoreboard.json");
 
     private List<Element> scoreboardElements;
 
@@ -29,22 +29,22 @@ public class Scoreboard {
      * @return {@code Scoreboard} object
      */
     public static Scoreboard getInstance(){
-        if(leaderboard == null){
-            leaderboard = new Scoreboard();
+        if(scoreboard == null){
+            scoreboard = new Scoreboard();
         }
-        return leaderboard;
+        return scoreboard;
     }
 
     private Scoreboard() {
         try {
-            if (!leaderboardFile.exists()) {
-                leaderboardFile.createNewFile();
-                FileWriter fileWriter = new FileWriter(leaderboardFile);
+            if (!scoreboardFile.exists()) {
+                scoreboardFile.createNewFile();
+                FileWriter fileWriter = new FileWriter(scoreboardFile);
                 fileWriter.write("[]");
                 fileWriter.close();
                 scoreboardElements = List.of();
             } else {
-                loadLeaderboard(new FileInputStream(leaderboardFile));
+                loadLeaderboard(new FileInputStream(scoreboardFile));
             }
         } catch (IOException e) {
             Logger.warn("An I/O Exception has been occurred!");
@@ -69,7 +69,7 @@ public class Scoreboard {
      */
     public List<Element> getLeaderboard() {
         try {
-            loadLeaderboard(new FileInputStream(leaderboardFile));
+            loadLeaderboard(new FileInputStream(scoreboardFile));
             return scoreboardElements.stream()
                     .sorted(Comparator.comparing(Element::getDate)).collect(Collectors.toList());
         }catch(IOException e) {
@@ -86,7 +86,7 @@ public class Scoreboard {
      */
     public void saveScoreboardElement(Element Element){
         try {
-            FileWriter fileWriter = new FileWriter(leaderboardFile);
+            FileWriter fileWriter = new FileWriter(scoreboardFile);
 
             SequenceWriter sequenceWriter = OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValuesAsArray(fileWriter);
             for(boardgame.json.Element leaderboardElement: scoreboardElements){
