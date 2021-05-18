@@ -44,7 +44,7 @@ public class Scoreboard {
                 fileWriter.close();
                 scoreboardElements = List.of();
             } else {
-                loadLeaderboard(new FileInputStream(scoreboardFile));
+                loadScoreboard(new FileInputStream(scoreboardFile));
             }
         } catch (IOException e) {
             Logger.warn("An I/O Exception has been occurred!");
@@ -52,7 +52,7 @@ public class Scoreboard {
         }
     }
 
-    private void loadLeaderboard(InputStream is){
+    private void loadScoreboard(InputStream is) {
         try {
             scoreboardElements = OBJECT_MAPPER.readValue(is, new TypeReference<List<Element>>() {}); {
             }
@@ -67,9 +67,9 @@ public class Scoreboard {
      *
      * @return the scoreboard elements ordered by date
      */
-    public List<Element> getLeaderboard() {
+    public List<Element> getScoreboard() {
         try {
-            loadLeaderboard(new FileInputStream(scoreboardFile));
+            loadScoreboard(new FileInputStream(scoreboardFile));
             return scoreboardElements.stream()
                     .sorted(Comparator.comparing(Element::getDate)).collect(Collectors.toList());
         }catch(IOException e) {
@@ -84,13 +84,13 @@ public class Scoreboard {
      *
      * @param Element the element which is needed to be saved
      */
-    public void saveScoreboardElement(Element Element){
+    public void saveScoreboardElement(Element Element) {
         try {
             FileWriter fileWriter = new FileWriter(scoreboardFile);
 
             SequenceWriter sequenceWriter = OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValuesAsArray(fileWriter);
-            for(boardgame.json.Element leaderboardElement: scoreboardElements){
-                sequenceWriter.write(leaderboardElement);
+            for(boardgame.json.Element scoreboardElement: scoreboardElements) {
+                sequenceWriter.write(scoreboardElement);
             }
             sequenceWriter.write(Element);
             sequenceWriter.close();

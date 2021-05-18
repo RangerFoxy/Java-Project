@@ -35,7 +35,7 @@ public class ScoreboardController {
 
     @FXML
     public void initialize() {
-        List<Element> leaderboardList = leaderboard.getLeaderboard();
+        List<Element> leaderboardList = leaderboard.getScoreboard();
 
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         lightColumn.setCellValueFactory(new PropertyValueFactory<>("lightPlayer"));
