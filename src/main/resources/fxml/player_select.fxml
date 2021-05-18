@@ -53,14 +53,14 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="backButton" mnemonicParsing="false" onAction="#backAction" prefHeight="35.0" prefWidth="100.0" text="Back">
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#backAction" prefHeight="35.0" prefWidth="100.0" stylesheets="@../css/ui.css" text="Back">
                <HBox.margin>
                   <Insets right="100.0" />
                </HBox.margin>
                <font>
                   <Font name="Microsoft YaHei Bold" size="12.0" />
                </font></Button>
-            <Button fx:id="startButton" mnemonicParsing="false" onAction="#startAction" prefHeight="35.0" prefWidth="100.0" text="Start Game">
+            <Button fx:id="startButton" mnemonicParsing="false" onAction="#startAction" prefHeight="35.0" prefWidth="100.0" stylesheets="@../css/ui.css" text="Start Game">
                <HBox.margin>
                   <Insets left="100.0" />
                </HBox.margin>

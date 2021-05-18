@@ -40,3 +40,8 @@
     -fx-background-image: url("/images/congrat.png");
     -fx-background-position: center;
 }
+
+#scoreboard {
+    -fx-background-image: url("/images/scoreboard.png");
+    -fx-background-position: center;
+}

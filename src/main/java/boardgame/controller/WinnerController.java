@@ -13,12 +13,6 @@ public class WinnerController {
     private Label side;
 
     @FXML
-    public void newAction(ActionEvent event) {
-        Logger.info("The user clicked the New Game button and a new game has been started.");
-        view.draw(event, "/fxml/ui.fxml");
-    }
-
-    @FXML
     public void exitAction(ActionEvent event) {
         Logger.info("The user quit to the main menu.");
         view.draw(event, "/fxml/menu.fxml");

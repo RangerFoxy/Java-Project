@@ -5,17 +5,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boardgame.controller.ScoreboardController">
+<BorderPane id="scoreboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/ui.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boardgame.controller.ScoreboardController">
    <center>
       <TableView fx:id="leaderboardTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
             <TableColumn fx:id="dateColumn" prefWidth="150.0" resizable="false" text="Date" />
             <TableColumn fx:id="lightColumn" prefWidth="150.0" resizable="false" text="Light Knight" />
             <TableColumn fx:id="darkColumn" prefWidth="150.0" resizable="false" text="Dark Knight" />
-          <TableColumn fx:id="winnerColumn" prefWidth="110.0" resizable="false" text="Winner" />
+          <TableColumn fx:id="winnerColumn" prefWidth="107.0" resizable="false" text="Winner" />
         </columns>
          <BorderPane.margin>
             <Insets left="20.0" right="20.0" />
@@ -23,17 +26,27 @@
       </TableView>
    </center>
    <top>
-      <Label text="Scoreboard" BorderPane.alignment="CENTER">
+      <Label text="Scoreboard" textFill="WHITE" underline="true" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" top="20.0" />
          </BorderPane.margin>
          <font>
-            <Font name="Arial Black" size="20.0" />
+            <Font name="Britannic Bold" size="30.0" />
          </font>
+         <effect>
+            <Lighting diffuseConstant="2.0" specularConstant="0.28" specularExponent="17.67">
+               <bumpInput>
+                  <Shadow radius="12.225" width="29.9" />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
       </Label>
    </top>
    <bottom>
-      <Button mnemonicParsing="false" onAction="#backAction" prefHeight="30.0" prefWidth="50.0" text="Back" BorderPane.alignment="CENTER">
+      <Button mnemonicParsing="false" onAction="#backAction" prefHeight="30.0" prefWidth="56.0" stylesheets="@../css/ui.css" text="Back" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" top="20.0" />
          </BorderPane.margin>
