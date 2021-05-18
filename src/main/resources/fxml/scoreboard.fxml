@@ -26,7 +26,7 @@
       </TableView>
    </center>
    <top>
-      <Label text="Scoreboard" textFill="WHITE" underline="true" BorderPane.alignment="CENTER">
+      <Label text="Match History" textFill="WHITE" underline="true" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" top="20.0" />
          </BorderPane.margin>
@@ -46,7 +46,7 @@
       </Label>
    </top>
    <bottom>
-      <Button mnemonicParsing="false" onAction="#backAction" prefHeight="30.0" prefWidth="56.0" stylesheets="@../css/ui.css" text="Back" BorderPane.alignment="CENTER">
+      <Button mnemonicParsing="false" onAction="#backAction" prefHeight="30.0" prefWidth="60.0" stylesheets="@../css/ui.css" text="Back" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" top="20.0" />
          </BorderPane.margin>

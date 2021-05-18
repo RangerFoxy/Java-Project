@@ -15,7 +15,7 @@
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="playButton" mnemonicParsing="false" onAction="#playAction" prefHeight="35.0" prefWidth="100.0" stylesheets="@../css/ui.css" text="Play">
+            <Button fx:id="playButton" mnemonicParsing="false" onAction="#playAction" prefHeight="35.0" prefWidth="110.0" stylesheets="@../css/ui.css" text="Play">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -23,7 +23,7 @@
                   <Font name="Microsoft YaHei Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="scoreboardButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#scoreboardAction" prefHeight="35.0" prefWidth="100.0" stylesheets="@../css/ui.css" text="Scoreboard">
+            <Button fx:id="scoreboardButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#scoreboardAction" prefHeight="35.0" prefWidth="110.0" stylesheets="@../css/ui.css" text="Match History">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -35,7 +35,7 @@
                   <String fx:value="button" />
                </styleClass>
             </Button>
-            <Button fx:id="exitButton" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="35.0" prefWidth="100.0" stylesheets="@../css/ui.css" text="Exit">
+            <Button fx:id="exitButton" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="35.0" prefWidth="110.0" stylesheets="@../css/ui.css" text="Exit">
                <font>
                   <Font name="Microsoft YaHei Bold" size="12.0" />
                </font>
