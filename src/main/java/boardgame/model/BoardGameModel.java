@@ -5,7 +5,7 @@ import javafx.beans.property.ObjectProperty;
 import java.util.*;
 
 /**
- *
+ * A Class representing the BoardGame and it's logic.
  */
 public class BoardGameModel {
 
