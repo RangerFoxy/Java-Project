@@ -41,7 +41,7 @@ public class Draw {
     }
 
     public void exitAlert(ActionEvent event) throws IOException {
-        Logger.info("An alert has been occured!");
+        Logger.info("An alert has been occurred!");
         Alert exit = new Alert(Alert.AlertType.CONFIRMATION);
         exit.setTitle("Exit to main menu");
         exit.setHeaderText("Are you sure?");
@@ -73,7 +73,6 @@ public class Draw {
             Stage stage = new Stage();
             stage.setTitle("2 Knight Chess");
             stage.setResizable(false);
-            stage.getIcons().add(new Image("/images/icon.png"));
             stage.setScene(new Scene(root));
             stage.show();
             Logger.info("Victory scene is opened.");

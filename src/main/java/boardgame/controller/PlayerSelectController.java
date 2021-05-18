@@ -38,7 +38,7 @@ public class PlayerSelectController {
                 stage.show();
                 Logger.info("The game is started.");
             } catch (IOException e) {
-                Logger.error("IOException has been occured!");
+                Logger.error("IOException has been occurred!");
                 System.exit(1);
             }
         }
