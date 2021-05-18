@@ -28,24 +28,16 @@
 
 #main {
     -fx-background-color: black;
-   /* -fx-background-image: url("/images/main.png");
-    -fx-background-position: center;*/
 }
 
 #players {
     -fx-background-color: grey;
-/*    -fx-background-image: url("/images/players.png");
-    -fx-background-position: center;*/
 }
 
 #win {
     -fx-background-color: yellow;
-/*    -fx-background-image: url("/images/congrat.png");
-    -fx-background-position: center;*/
 }
 
 #scoreboard {
     -fx-background-color: black;
-/*    -fx-background-image: url("/images/scoreboard.png");
-    -fx-background-position: center;*/
 }
